@@ -2,6 +2,7 @@
 import 'source-map-support/register';
 import { App, Environment, StackProps } from 'aws-cdk-lib';
 import { VPCStack } from './stacks/vpc';
+import { ALBStack } from './stacks/alb';
 import { getConfig } from './lib/common/build-config';
 import { BuildConfig } from './lib/common/config.interface';
 import { Tags } from 'aws-cdk-lib';
@@ -20,4 +21,12 @@ const vpcStackId = `${stackId}-vpc`;
 const vpcStack = new VPCStack(app, vpcStackId, {
   ...baseProps,
   stackName: vpcStackId,
+}, buildConfig);
+
+
+const albStackId = `${stackId}-alb`;
+const albStack = new ALBStack(app, albStackId, {
+  ...baseProps,
+  stackName: albStackId,
+  vpc: vpcStack.vpc,
 }, buildConfig);

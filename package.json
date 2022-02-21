@@ -5,7 +5,7 @@
     "cdk-boilerplate": "infra/app.js"
   },
   "scripts": {
-    "build": "tsc --build --clean",
+    "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
@@ -14,12 +14,13 @@
     "cdk-synth-prod": "cdk synth -c config=prod --profile aws_profile",
     "cdk-diff-dev": "npm run build && cdk diff \"*\" -c config=develop --profile aws_profile",
     "cdk-diff-qa": "npm run build && cdk diff \"*\" -c config=qa --profile aws_profile",
-    "cdk-diff-prod": "tsc && cdk diff \"*\" -c config=prod --profile aws_profile",
-    "cdk-deploy-dev": "tsc && cdk deploy \"*\" -c config=dev --profile aws_profile --progress=events",
-    "cdk-deploy-qa": "tsc && cdk deploy \"*\" -c config=qa --profile aws_profile --progress=events",
-    "cdk-deploy-prod": "tsc && cdk deploy \"*\" -c config=prod --profile aws_profile --progress=events",
-    "cdk-deploy-dev2": "tsc && cdk deploy \"*\" -c config=dev --profile aws_profile --require-approval=never --progress=events",
-    "cdk-deploy-prod2": "tsc && cdk deploy \"*\" -c config=prod --profile aws_profile --require-approval=never --progress=events"
+    "cdk-diff-prod": "npm run build && cdk diff \"*\" -c config=prod --profile aws_profile",
+    "cdk-deploy-dev": "npm run build && cdk deploy \"*\" -c config=dev --profile aws_profile --require-approval=never  --progress=events",
+    "cdk-deploy-qa": "npm run build && cdk deploy \"*\" -c config=qa --profile aws_profile --require-approval=never  --progress=events",
+    "cdk-deploy-prod": "npm run build && cdk deploy \"*\" -c config=prod --profile aws_profile --require-approval=never  --progress=events",
+    "cdk-destroy-dev": "cdk destroy --all -c config=develop --profile aws_profile",
+    "cdk-destroy-qa": "cdk destroy --all -c config=qa --profile aws_profile",
+    "cdk-destroy-prod": "cdk destroy --all -c config=prod --profile aws_profile"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",

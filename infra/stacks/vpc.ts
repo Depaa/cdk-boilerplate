@@ -10,7 +10,7 @@ export class VPCStack extends Stack {
     super(scope, id, props);
 
     this.vpc = this.createVPC(
-      name(id, 'vpc'),
+      name(id),
       buildConfig.stacks.vpc.cidr,
       buildConfig.stacks.vpc.natGateways,
       buildConfig.stacks.vpc.maxAzs,

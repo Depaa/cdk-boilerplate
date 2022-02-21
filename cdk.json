@@ -16,7 +16,7 @@
         "vpc": {
           "maxAzs": 2,
           "cidr": "10.0.0.0/24",
-          "natGateways": 1
+          "natGateways": 0
         }
       }
     },
@@ -31,7 +31,7 @@
         "vpc": {
           "maxAzs": 2,
           "cidr": "10.0.1.0/24",
-          "natGateways": 1
+          "natGateways": 0
         }
       }
     },

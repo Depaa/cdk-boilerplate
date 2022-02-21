@@ -2,8 +2,8 @@
 import { aws_ec2 as ec2 } from 'aws-cdk-lib';
 import { Aspects, Tag } from 'aws-cdk-lib';
 
-export function name(id: string, name: string): string {
-  return id + "-" + name;
+export function name(id: string, name?: string): string {
+  return name ? `${id}-${name}` : id;
 }
 
 /*
