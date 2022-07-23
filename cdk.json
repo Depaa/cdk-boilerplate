@@ -5,10 +5,10 @@
     "exclude": ["README.md", "cdk*.json", "**/*.d.ts", "**/*.js", "tsconfig.json", "package*.json", "yarn.lock", "node_modules", "test"]
   },
   "context": {
-    "develop": {
+    "dev": {
       "account": "012345678901",
       "region": "eu-central-1",
-      "environment": "develop",
+      "environment": "dev",
       "version": "0.0.1",
       "build": "0",
       "project": "cdk-boilerplate",
